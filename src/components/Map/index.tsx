@@ -3,20 +3,39 @@ import { IMap } from './interfaces'
 
 import cl from './index.module.sass'
 import Cells from './Cells'
+import { connect } from 'react-redux'
+import { generateMapField } from '../../redux/actions/mapActions'
 
 const Map: React.FC<IMap> = (props: IMap) => {
 
+    const newGameClick = () => {
+        props.generateMapField(5)
+    }
+
     return (
         <div className={cl.map}>
+            <button onClick={newGameClick}>Generate Field</button>
+
             <table className={cl.mapCells}>
                 <thead />
                 <tbody>
-                    <Cells />
+                    <Cells cells={props.cells} />
                 </tbody>
             </table>
         </div>
     )
-
 }
 
-export default Map
+const MapToState = (state: any) => {
+    return {
+        cells: state.Map.cells
+    }
+}
+
+const MapToDispatch = (dispatch: any) => {
+    return {
+        generateMapField: (size: number) => dispatch(generateMapField(size))
+    }
+}
+
+export default connect(MapToState, MapToDispatch)(Map)

@@ -4,3 +4,7 @@ export declare enum CELL_STATE {
     USER_CELL = 2,
     AI_CELL = 3,
 }
+
+export enum MAP {
+    GENERATE_MAP
+}
