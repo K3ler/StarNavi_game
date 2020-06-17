@@ -1,15 +1,19 @@
 import React from 'react'
-import { ICells } from './interface'
 import cl from './index.module.sass'
+
 import { Cell } from '../Cell'
+import { ICells } from './interface'
 
-const Cells: React.FC<ICells> = (props : ICells) => {
+const Cells: React.FC<ICells> = (props: ICells) => {
 
-    const cellsArray = props.cells.map((row, i) => (
-        <tr className={cl.row}>
+    const cellsArray = props.cells.map((row, y) => (
+        <tr className={cl.row} key={"a" + y}>
             {
-                row.map((cell, index) => (
-                    <Cell />
+                row.map((cell, x) => (
+                    <Cell y={y} x={x}
+                          value={cell} 
+                          click={props.handleClick}
+                          key={"a" + y + "b" + x} />
                 ))
             }
         </tr>
@@ -17,12 +21,9 @@ const Cells: React.FC<ICells> = (props : ICells) => {
 
     return (
         <React.Fragment>
-           {cellsArray}
+            {cellsArray}
         </React.Fragment>
     )
 }
-
-
-
 
 export default Cells 

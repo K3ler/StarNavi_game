@@ -7,7 +7,7 @@ const Username = () => {
     return (
         <div className={cl.usernameControl}>
             <input className={cl.usernameInput}
-                   placeholder="Username" />
+                   placeholder="Enter Username" />
         </div>
     )
 }
