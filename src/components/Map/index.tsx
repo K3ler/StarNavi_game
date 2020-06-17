@@ -9,7 +9,7 @@ import { generateMapField } from '../../redux/actions/mapActions'
 const Map: React.FC<IMap> = (props: IMap) => {
 
     const newGameClick = () => {
-        props.generateMapField(5)
+        props.generateMapField(15)
     }
 
     return (
