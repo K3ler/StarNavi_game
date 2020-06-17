@@ -3,13 +3,19 @@ import cl from './index.module.sass';
 
 import Map from '../../components/Map'
 import { Controls } from '../../components/Controls';
+import { LeaderList } from '../../components/LeaderList';
 
 const App: React.FC = () => {
   
   return (
     <div className={cl.app}>
       <Controls />
-      <Map />
+      
+      <div className={cl.container}>
+        <Map />
+        <LeaderList />
+      </div>
+
     </div>
   );
 }

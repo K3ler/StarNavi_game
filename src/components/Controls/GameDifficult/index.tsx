@@ -2,12 +2,15 @@ import React from 'react'
 
 import cl from './index.module.sass'
 
-const GameDifficult : React.FC = () => {
+const GameDifficult: React.FC = () => {
 
-    return (
-        <React.Fragment>
-
-        </React.Fragment>
+    return (<div className={cl.wrapper}>
+        <select className={cl.select}>
+            <option>Game Difficult</option>
+            <option>One</option>
+            <option>Two</option>
+        </select>
+    </div>
     )
 }
 

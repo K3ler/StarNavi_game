@@ -12,7 +12,7 @@ const Controls: React.FC = () => {
         <div className={cl.controls}>
             <GameDifficult />
             <Username />
-            <PlayButton />
+            <PlayButton caption="Play" />
         </div>
     )
 }

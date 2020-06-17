@@ -1,13 +1,16 @@
 import React from 'react'
 
 import cl from './index.module.sass'
+import { IPlayButton } from './interface'
 
-const PlayButton = () => {
+const PlayButton : React.FC<IPlayButton> = (props: IPlayButton) => {
 
     return (
-        <React.Fragment>
-
-        </React.Fragment>
+        <div className={cl.control}>
+            <button className={cl.playButton}>
+                {props.caption}
+            </button>
+        </div>
     )
 }
 

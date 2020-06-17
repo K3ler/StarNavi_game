@@ -14,8 +14,6 @@ const Map: React.FC<IMap> = (props: IMap) => {
 
     return (
         <div className={cl.map}>
-            <button onClick={newGameClick}>Generate Field</button>
-
             <table className={cl.mapCells}>
                 <thead />
                 <tbody>
