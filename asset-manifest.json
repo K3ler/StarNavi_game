@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/StarNavi_game/static/css/main.59aeb27b.chunk.css",
+    "main.css": "/StarNavi_game/static/css/main.3d41a4e6.chunk.css",
     "main.js": "/StarNavi_game/static/js/main.08df0966.chunk.js",
     "main.js.map": "/StarNavi_game/static/js/main.08df0966.chunk.js.map",
     "runtime-main.js": "/StarNavi_game/static/js/runtime-main.8dcec400.js",
@@ -9,17 +9,17 @@
     "static/js/2.a91f2c4e.chunk.js": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js",
     "static/js/2.a91f2c4e.chunk.js.map": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js.map",
     "index.html": "/StarNavi_game/index.html",
-    "precache-manifest.4c0985d97a551d8f349672d1eee88074.js": "/StarNavi_game/precache-manifest.4c0985d97a551d8f349672d1eee88074.js",
+    "precache-manifest.b3bf7a9f4299079f75c44783042dd41f.js": "/StarNavi_game/precache-manifest.b3bf7a9f4299079f75c44783042dd41f.js",
     "service-worker.js": "/StarNavi_game/service-worker.js",
     "static/css/2.d34346ea.chunk.css.map": "/StarNavi_game/static/css/2.d34346ea.chunk.css.map",
-    "static/css/main.59aeb27b.chunk.css.map": "/StarNavi_game/static/css/main.59aeb27b.chunk.css.map",
+    "static/css/main.3d41a4e6.chunk.css.map": "/StarNavi_game/static/css/main.3d41a4e6.chunk.css.map",
     "static/js/2.a91f2c4e.chunk.js.LICENSE.txt": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8dcec400.js",
     "static/css/2.d34346ea.chunk.css",
     "static/js/2.a91f2c4e.chunk.js",
-    "static/css/main.59aeb27b.chunk.css",
+    "static/css/main.3d41a4e6.chunk.css",
     "static/js/main.08df0966.chunk.js"
   ]
 }
