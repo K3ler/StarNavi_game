@@ -1,4 +1,5 @@
 import { PLAYER, LEADERS } from "../constraint"
+import * as api from '../../api'
 
 export const setUsername = (name: string) => {
 
@@ -29,8 +30,29 @@ export const setWinner = (winner: string, date: Date) => {
 
         let leaders = JSON.parse(JSON.stringify(getState().leaderBoard.leaders))
 
+        var months = ["January", "February", "March",
+         "April", "May", "June", "July", "August", 
+         "September", "October", "November", "December"
+        ];
+
+        let nowDate = new Date();
+        let global = nowDate.getDate() + " " + months[nowDate.getMonth()] + " " + nowDate.getFullYear();
+
+        let hours = ("0" + nowDate.getHours()).slice(-2);
+        let minutes = ("0" + nowDate.getMinutes()).slice(-2);
+        let dateString = `${hours}:${minutes}; `+global
+
+
         leaders.push({
-            winner
+            winner,
+            date: dateString
+        })
+
+        api.sendWinner({
+            "winner" : winner,
+            date : dateString
+        }, (resp) => {
+            console.log(resp)
         })
 
         dispatch({
@@ -41,7 +63,7 @@ export const setWinner = (winner: string, date: Date) => {
         dispatch({
             payload: {
                 winner,
-                date
+                date : dateString
             },
             type: PLAYER.SET_WINNER
         })

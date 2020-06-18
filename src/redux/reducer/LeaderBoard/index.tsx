@@ -17,7 +17,7 @@ const LeaderBoard = (state = initialState, action: any) => {
         case LEADERS.ADD_WINNER:
             return {
                 ...state,
-                leaders: action.payload
+                leaders: action.payload.reverse()
             }
         default:
             return state

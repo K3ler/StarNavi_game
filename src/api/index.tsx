@@ -13,6 +13,10 @@ export const getLeaders = (cb) => {
     instance.get('/winners').then(cb)
 }
 
-export const sendWinners = (cb) => {
-    instance.post('/winners')
+export const sendWinner = (data, cb) => {
+    instance.post('/winners', data, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(cb)
 }
