@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getLeaders } from '../../redux/actions/leaderBoard';
 
 const App: React.FC = () => {
 
@@ -18,6 +19,9 @@ const App: React.FC = () => {
 
     // Setup Game Settings
     dispatch(setGameSettigns())
+
+    // Get Leaders
+    dispatch(getLeaders())
   }, [dispatch])
 
 

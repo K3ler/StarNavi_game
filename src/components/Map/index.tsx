@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IMap } from './interfaces'
 
 import cl from './index.module.sass'
 import Cells from './Cells'
 
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux'
-import { changeValue, setPrevCell } from '../../redux/actions/mapActions'
+import { changeValue, setPrevCell, changeDelay } from '../../redux/actions/mapActions'
 import { CELL } from '../../redux/constraint'
 
 import useInterval from '@use-it/interval';
@@ -73,6 +73,24 @@ const Map: React.FC<IMap> = (props: IMap) => {
         }
     };
 
+    useEffect(() => {
+
+        let limit = (mapSize * mapSize) / 2;
+
+        if (userScore > limit ) {
+            console.log("Game Stoped, userWin")
+            dispatch(changeDelay(null))
+        } 
+
+        if (aiScore > limit) {
+            console.log("Game Stoped, aiWin")
+            dispatch(changeDelay(null))
+        }
+
+
+
+    }, [aiScore, userScore, mapSize, dispatch])
+
     useInterval(() => {
         checkWinnerScore()
         hightlightRandomCell()
@@ -87,10 +105,6 @@ const Map: React.FC<IMap> = (props: IMap) => {
                     <Cells cells={cells} handleClick={handleClick} />
                 </tbody>
             </table>
-            <div>
-                <span>User: <span>{userScore}</span> &nbsp;</span> 
-                <span>AI: <span>{aiScore}</span></span>
-            </div>
         </div>
     )
 }

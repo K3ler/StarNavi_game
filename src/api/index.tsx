@@ -5,10 +5,10 @@ const instance = axios.create({
     timeout: 1000
 });
 
-
 export const getGameSettings = (cb) => {
+    instance.get('/game-settings').then(cb)
+}
 
-    instance.get('/game-settings').then((res) => {
-        cb(res)
-    })
+export const getLeaders = (cb) => {
+    instance.get('/winners').then(cb)
 }

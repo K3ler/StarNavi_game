@@ -60,7 +60,7 @@ const Map = (state = initialState, action: any) => {
         case MAP.SET_GAME_STATE:
             return {
                 ...state,
-                isGameRunning : action.playload
+                isGameRunning : action.payload
             }
 
         default:

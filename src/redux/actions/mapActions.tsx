@@ -16,7 +16,7 @@ export const generateMapField = (size: number) => {
 }
 
 // Change interval delay, that change game speed
-export const changeDelay = (delay: number) => {
+export const changeDelay = (delay: number | null) => {
 
     return {
         payload: delay,
@@ -71,8 +71,11 @@ export const setGameMode = (index: number) => {
 
 export const setGameState = (value: boolean) => {
 
-    return {
-        payload: value,
-        type: MAP.SET_GAME_STATE
+    console.log(value)
+    return (dispatch) => {
+        dispatch({
+            payload: value,
+            type: MAP.SET_GAME_STATE
+        })
     }
 }

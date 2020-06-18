@@ -22,4 +22,14 @@ export const setAiScore = (score : number ) => {
         payload: score,
         type: PLAYER.SET_AI_SCORE
     }
-} 
+}
+
+export const setWinner = (name : string, date: Date) => {
+    return {
+        payload: {
+            name,
+            date
+        },
+        type: PLAYER.SET_WINNER
+    }
+}

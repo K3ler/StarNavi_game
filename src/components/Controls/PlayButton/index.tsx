@@ -14,10 +14,11 @@ const PlayButton: React.FC = () => {
     const dispatch      = useDispatch()
 
     const startGame = () => { 
-        
-        console.log(isGameRunning)
 
-        
+        if (isGameRunning) {
+            console.log("Restart Game")
+        }
+                
         if (userName === '') {
             toast.error("Please Enter Username")
             return;

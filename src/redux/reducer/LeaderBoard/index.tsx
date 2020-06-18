@@ -1,4 +1,5 @@
 import { TLeaderBoard } from "./type";
+import { LEADERS } from "../../constraint";
 
 const initialState : TLeaderBoard  = {
     leaders : [],
@@ -8,6 +9,11 @@ const initialState : TLeaderBoard  = {
 const LeaderBoard = (state = initialState, action: any) => {
 
     switch (action.type) {
+        case LEADERS.GET_LEADERS:
+            return {
+                ...state,
+                leaders : action.payload
+            }
         default:
             return state
     }
