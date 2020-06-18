@@ -1,1 +1,1 @@
-## Game for Star Navi
+## Game for StarNavi

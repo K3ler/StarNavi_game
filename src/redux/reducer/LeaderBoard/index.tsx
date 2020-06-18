@@ -14,6 +14,11 @@ const LeaderBoard = (state = initialState, action: any) => {
                 ...state,
                 leaders : action.payload
             }
+        case LEADERS.ADD_WINNER:
+            return {
+                ...state,
+                leaders: action.payload
+            }
         default:
             return state
     }
@@ -21,3 +26,4 @@ const LeaderBoard = (state = initialState, action: any) => {
 
 export { LeaderBoard } 
 
+ 

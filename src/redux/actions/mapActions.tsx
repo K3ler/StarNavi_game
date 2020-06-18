@@ -70,12 +70,16 @@ export const setGameMode = (index: number) => {
 }
 
 export const setGameState = (value: boolean) => {
-
-    console.log(value)
     return (dispatch) => {
         dispatch({
             payload: value,
             type: MAP.SET_GAME_STATE
         })
+    }
+}
+
+export const resetMap = () => {
+    return {
+        type: MAP.RESET_MAP
     }
 }

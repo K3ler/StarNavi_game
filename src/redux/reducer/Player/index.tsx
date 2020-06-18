@@ -3,7 +3,9 @@ import { PLAYER } from "../../constraint"
 const initialState = {
     userScore: 0,
     aiScore : 0,
-    userName: ''
+    userName: '',
+    winner: '',
+
 }
 
 const Player = (state = initialState, action: any) => {
@@ -23,6 +25,18 @@ const Player = (state = initialState, action: any) => {
             return {
                 ...state,
                 aiScore: action.payload
+            }
+        case PLAYER.SET_WINNER:
+            return {
+                ...state,
+                winner: action.payload.winner
+            }
+        case PLAYER.RESET_PLAYERS:
+            return {
+                userScore: 0,
+                aiScore: 0,
+                userName: '',
+                winner: ''
             }
         default:
             return state

@@ -9,10 +9,12 @@ const LeaderItem: React.FC = () => {
 
     const leaders = leadersList.map((leader, index) => {
 
-        return (<li className={cl.leaderItem}>
-            <span className={cl.leaderName}>{leader.winner}</span>
-            <span className={cl.leaderDate}>{leader.date}</span>
-        </li>)
+        return (
+            <li className={cl.leaderItem} key={"ld"+index}>
+                <span className={cl.leaderName}>{leader.winner}</span>
+                <span className={cl.leaderDate}>{leader.date}</span>
+            </li>
+        )
     })
 
     return (

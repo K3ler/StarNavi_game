@@ -12,3 +12,7 @@ export const getGameSettings = (cb) => {
 export const getLeaders = (cb) => {
     instance.get('/winners').then(cb)
 }
+
+export const sendWinners = (cb) => {
+    instance.post('/winners')
+}

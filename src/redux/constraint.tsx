@@ -13,7 +13,8 @@ export const MAP = {
     SET_PREV_CELL : "SET_PREV_CELL",
     SETUP_MODES: "SETUP_MODES",
     SET_GAME_MODE: "SET_GAME_MODE",
-    SET_GAME_STATE: "SET_GAME_STATE"
+    SET_GAME_STATE: "SET_GAME_STATE",
+    RESET_MAP     : "RESET_MAP"
 }
 
 export const PLAYER = {
@@ -25,5 +26,6 @@ export const PLAYER = {
 }
 
 export const LEADERS = {
-    GET_LEADERS : "GET_LEADERS"
+    GET_LEADERS : "GET_LEADERS",
+    ADD_WINNER : "ADD_WINNER",
 }

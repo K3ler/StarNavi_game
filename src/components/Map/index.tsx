@@ -9,7 +9,7 @@ import { changeValue, setPrevCell, changeDelay } from '../../redux/actions/mapAc
 import { CELL } from '../../redux/constraint'
 
 import useInterval from '@use-it/interval';
-import { setUserScore, setAiScore } from '../../redux/actions/playerActions'
+import { setUserScore, setAiScore, setWinner } from '../../redux/actions/playerActions'
 
 const Map: React.FC<IMap> = (props: IMap) => {
 
@@ -22,6 +22,7 @@ const Map: React.FC<IMap> = (props: IMap) => {
 
     const aiScore = useSelector((state: RootStateOrAny) => state.player.aiScore)
     const userScore = useSelector((state: RootStateOrAny) => state.player.userScore)
+    const userName = useSelector((state: RootStateOrAny) => state.player.userName)
 
     const handleClick = (y, x) => {
 
@@ -77,19 +78,17 @@ const Map: React.FC<IMap> = (props: IMap) => {
 
         let limit = (mapSize * mapSize) / 2;
 
-        if (userScore > limit ) {
-            console.log("Game Stoped, userWin")
+        if (userScore >= limit ) {
+            dispatch(setWinner(userName, new Date()))
             dispatch(changeDelay(null))
         } 
 
-        if (aiScore > limit) {
-            console.log("Game Stoped, aiWin")
+        if (aiScore >= limit) {
+            dispatch(setWinner("Computer", new Date()))
             dispatch(changeDelay(null))
         }
 
-
-
-    }, [aiScore, userScore, mapSize, dispatch])
+    }, [aiScore, userScore, mapSize, dispatch, userName])
 
     useInterval(() => {
         checkWinnerScore()

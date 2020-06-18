@@ -14,18 +14,18 @@ const initialState: TMap = {
     modes: [],
     delay: null,
     currentDelay: null,
-    prevCell : [0,0],
+    prevCell: [0, 0],
 }
 
 const Map = (state = initialState, action: any) => {
 
-    switch(action.type) {
+    switch (action.type) {
 
         case MAP.GENERATE_MAP:
             return {
                 ...state,
-                cells : action.payload.cells,
-                mapSize : action.payload.size,
+                cells: action.payload.cells,
+                mapSize: action.payload.size,
             }
 
         case MAP.CHANGE_DELAY:
@@ -34,7 +34,7 @@ const Map = (state = initialState, action: any) => {
                 delay: action.payload
             }
 
-        case MAP.CHANGE_VALUE:           
+        case MAP.CHANGE_VALUE:
             return {
                 ...state,
                 cells: action.payload
@@ -55,12 +55,29 @@ const Map = (state = initialState, action: any) => {
             return {
                 ...state,
                 currentDelay: action.payload.delay,
-                mapSize: action.payload.mapSize 
+                mapSize: action.payload.mapSize
             }
         case MAP.SET_GAME_STATE:
             return {
                 ...state,
-                isGameRunning : action.payload
+                isGameRunning: action.payload
+            }
+
+        case MAP.RESET_MAP:
+            return {
+                isGameRunning: false,
+                cells: [
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                ],
+                mapSize: 5,
+                modes: [],
+                delay: null,
+                currentDelay: null,
+                prevCell: [0, 0],
             }
 
         default:

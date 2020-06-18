@@ -9,7 +9,8 @@ import { useDispatch } from 'react-redux';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getLeaders } from '../../redux/actions/leaderBoard';
+import { getLeaders } from '../../redux/actions/leaderActions';
+import { Message } from '../../components/Message';
 
 const App: React.FC = () => {
 
@@ -37,6 +38,8 @@ const App: React.FC = () => {
                       draggable
                       pauseOnHover />
       <Controls />
+
+      <Message />
 
       <div className={cl.container}>
         <Map />

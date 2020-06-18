@@ -2,8 +2,10 @@ import React from 'react'
 
 import cl from './index.module.sass'
 import { useSelector, RootStateOrAny, useDispatch } from 'react-redux'
-import { changeDelay, setGameState } from '../../../redux/actions/mapActions'
+import { changeDelay, setGameState, resetMap } from '../../../redux/actions/mapActions'
 import { toast } from 'react-toastify';
+import { resetPlayers } from '../../../redux/actions/playerActions';
+import { setGameSettigns } from '../../../redux/actions/indexActions';
 
 
 const PlayButton: React.FC = () => {
@@ -16,7 +18,10 @@ const PlayButton: React.FC = () => {
     const startGame = () => { 
 
         if (isGameRunning) {
-            console.log("Restart Game")
+            dispatch(resetMap())
+            dispatch(resetPlayers())
+            dispatch(setGameSettigns())
+            return 
         }
                 
         if (userName === '') {
