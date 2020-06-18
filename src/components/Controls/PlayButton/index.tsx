@@ -1,29 +1,40 @@
 import React from 'react'
 
 import cl from './index.module.sass'
-import { useSelector, RootStateOrAny, useDispatch } from 'react-redux'
-import { changeDelay, setGameState, resetMap } from '../../../redux/actions/mapActions'
-import { toast } from 'react-toastify';
+
+// Actions
 import { resetPlayers } from '../../../redux/actions/playerActions';
 import { setGameSettigns } from '../../../redux/actions/indexActions';
+import { changeDelay, setGameState, resetMap } from '../../../redux/actions/mapActions'
+
+// Libs
+import { useSelector, RootStateOrAny, useDispatch } from 'react-redux'
+import { toast } from 'react-toastify';
 
 
 const PlayButton: React.FC = () => {
 
+    // GameRunning flag
     const isGameRunning = useSelector((state: RootStateOrAny) => state.map.isGameRunning)
+    // Current choisen delay in dropbox
     const currentDelay  = useSelector((state: RootStateOrAny) => state.map.currentDelay)
+    // Current entered Username
     const userName      = useSelector((state: RootStateOrAny) => state.player.userName)
     const dispatch      = useDispatch()
 
     const startGame = () => { 
 
+        // When i click "Play again"
         if (isGameRunning) {
+            // Reset Map settings
             dispatch(resetMap())
+            // Reset players settings
             dispatch(resetPlayers())
+            // Reset game settings
             dispatch(setGameSettigns())
             return 
         }
-                
+        // Checks for errors
         if (userName === '') {
             toast.error("Please Enter Username")
             return;
@@ -34,9 +45,13 @@ const PlayButton: React.FC = () => {
             return 
         }
 
+        // Run game, and set delay for useInterval function.
         dispatch(setGameState(!isGameRunning))
+
+        // Null - not working, > 1 working
         dispatch(changeDelay(currentDelay))
     }
+
 
     const clickHandler = () => {
         startGame()

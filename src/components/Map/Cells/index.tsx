@@ -6,6 +6,7 @@ import { ICells } from './interface'
 
 const Cells: React.FC<ICells> = (props: ICells) => {
 
+    // Assembly Game Matrix
     const cellsArray = props.cells.map((row, y) => (
         <tr className={cl.row} key={"a" + y}>
             {
@@ -19,6 +20,7 @@ const Cells: React.FC<ICells> = (props: ICells) => {
         </tr>
     ))
 
+    // Then Render
     return (
         <React.Fragment>
             {cellsArray}

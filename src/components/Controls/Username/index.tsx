@@ -1,7 +1,11 @@
 import React from 'react'
 
 import cl from './index.module.sass'
+
+// Actions
 import { setUsername } from '../../../redux/actions/playerActions'
+
+// Libs
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux'
 
 const Username : React.FC = () => {
@@ -11,6 +15,7 @@ const Username : React.FC = () => {
 
     const onChangeHandler = (e) => {
         let name = e.target.value
+        // Set username from field
         dispatch(setUsername(name))
     }
 

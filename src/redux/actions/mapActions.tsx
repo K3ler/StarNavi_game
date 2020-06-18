@@ -24,6 +24,7 @@ export const changeDelay = (delay: number | null) => {
     }
 }
 
+// Change value in Array
 export const changeValue = (y, x, value) => {
 
     return (dispatch, getState) => {
@@ -45,6 +46,7 @@ export const setPrevCell = (y: number, x: number) => {
     }
 }
 
+// Setup game mode from dropdown menu
 export const setGameMode = (index: number) => {
 
     return (dispatch, getState) => {

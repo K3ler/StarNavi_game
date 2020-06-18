@@ -1,6 +1,7 @@
 import * as api from '../../api/'
 import { MAP } from '../constraint'
 
+// Get /game-settings enpoint, and save to store
 export const setGameSettigns = () => {
 
     return (dispatch) => {

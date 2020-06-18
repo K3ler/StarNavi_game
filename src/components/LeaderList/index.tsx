@@ -1,6 +1,8 @@
 import React from 'react'
 
 import cl from './index.module.sass'
+
+// Components
 import { LeaderItem } from './Item'
 
 const LeaderList: React.FC = () => {

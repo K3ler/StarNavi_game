@@ -52,7 +52,8 @@ export const setWinner = (winner: string, date: Date) => {
             "winner" : winner,
             date : dateString
         }, (resp) => {
-            console.log(resp)
+           
+            dispatch()
         })
 
         dispatch({
