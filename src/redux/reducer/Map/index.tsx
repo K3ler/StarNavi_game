@@ -2,7 +2,6 @@ import { TMap } from "./type"
 import { MAP } from "../../constraint"
 
 const initialState: TMap = {
-    name: '',
     isGameRunning: false,
     cells: [
         [0, 0, 0, 0, 0],
@@ -12,10 +11,10 @@ const initialState: TMap = {
         [0, 0, 0, 0, 0],
     ],
     mapSize: 5,
+    modes: [],
     delay: null,
+    currentDelay: null,
     prevCell : [0,0],
-    clickedCell : [0,0],
-    currentCell : [0,0]
 }
 
 const Map = (state = initialState, action: any) => {
@@ -45,6 +44,23 @@ const Map = (state = initialState, action: any) => {
             return {
                 ...state,
                 prevCell: action.payload
+            }
+
+        case MAP.SETUP_MODES:
+            return {
+                ...state,
+                modes: action.payload
+            }
+        case MAP.SET_GAME_MODE:
+            return {
+                ...state,
+                currentDelay: action.payload.delay,
+                mapSize: action.payload.mapSize 
+            }
+        case MAP.SET_GAME_STATE:
+            return {
+                ...state,
+                isGameRunning : action.playload
             }
 
         default:

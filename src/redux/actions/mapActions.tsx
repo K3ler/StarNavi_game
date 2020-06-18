@@ -38,9 +38,41 @@ export const changeValue = (y, x, value) => {
     }
 }
 
-export const setPrevCell = (y, x) => {
+export const setPrevCell = (y: number, x: number) => {
     return {
         payload: [y, x],
         type: MAP.PREV_CELL
+    }
+}
+
+export const setGameMode = (index: number) => {
+
+    return (dispatch, getState) => {
+
+        if (index === -1) {
+            index = 0
+        }
+
+        let modes = getState().map.modes[index]
+        let delay = modes.delay
+        let fieldSize = modes.field
+
+        dispatch({
+            payload: {
+                delay: delay,
+                mapSize: fieldSize
+            },
+            type: MAP.SET_GAME_MODE
+        })
+
+        dispatch(generateMapField(fieldSize))
+    }
+}
+
+export const setGameState = (value: boolean) => {
+
+    return {
+        payload: value,
+        type: MAP.SET_GAME_STATE
     }
 }

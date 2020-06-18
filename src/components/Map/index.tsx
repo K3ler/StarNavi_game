@@ -1,14 +1,15 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { IMap } from './interfaces'
 
 import cl from './index.module.sass'
 import Cells from './Cells'
 
 import { useDispatch, useSelector, RootStateOrAny } from 'react-redux'
-import { generateMapField, changeValue, setPrevCell } from '../../redux/actions/mapActions'
+import { changeValue, setPrevCell } from '../../redux/actions/mapActions'
 import { CELL } from '../../redux/constraint'
 
 import useInterval from '@use-it/interval';
+import { setUserScore, setAiScore } from '../../redux/actions/playerActions'
 
 const Map: React.FC<IMap> = (props: IMap) => {
 
@@ -19,11 +20,14 @@ const Map: React.FC<IMap> = (props: IMap) => {
     const mapSize = useSelector((state: RootStateOrAny) => state.map.mapSize)
     const prevCell = useSelector((state: RootStateOrAny) => state.map.prevCell)
 
+    const aiScore = useSelector((state: RootStateOrAny) => state.player.aiScore)
+    const userScore = useSelector((state: RootStateOrAny) => state.player.userScore)
+
     const handleClick = (y, x) => {
 
-        if(cells[y][x] === CELL.HIGHLIGHT) {
+        if (cells[y][x] === CELL.HIGHLIGHT) {
             dispatch(changeValue(y, x, CELL.USER))
-            // Set UserScore
+            dispatch(setUserScore(userScore + 1))
         }
     }
 
@@ -62,10 +66,10 @@ const Map: React.FC<IMap> = (props: IMap) => {
     const checkWinnerScore = () => {
 
         let [y, x] = prevCell
-        
+
         if (cells[y][x] === CELL.HIGHLIGHT) {
             dispatch(changeValue(y, x, CELL.AI))
-            // SET AI SCORE
+            dispatch(setAiScore(aiScore + 1))
         }
     };
 
@@ -73,10 +77,6 @@ const Map: React.FC<IMap> = (props: IMap) => {
         checkWinnerScore()
         hightlightRandomCell()
     }, delay)
-
-    const generateMap = useCallback(() => {
-        dispatch(generateMapField(5));
-    }, [dispatch]);
 
     return (
         <div className={cl.map}>
@@ -87,6 +87,10 @@ const Map: React.FC<IMap> = (props: IMap) => {
                     <Cells cells={cells} handleClick={handleClick} />
                 </tbody>
             </table>
+            <div>
+                <span>User: <span>{userScore}</span> &nbsp;</span> 
+                <span>AI: <span>{aiScore}</span></span>
+            </div>
         </div>
     )
 }
