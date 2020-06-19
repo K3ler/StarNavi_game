@@ -9,6 +9,8 @@ const LeaderItem: React.FC = () => {
 
     let leadersList = useSelector((state : RootStateOrAny) => state.leaderBoard.leaders)
 
+
+
     // Get all winners
     const leaders = leadersList.map((leader, index) => {
         return (

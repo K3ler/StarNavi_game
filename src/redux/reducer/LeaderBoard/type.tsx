@@ -1,5 +1,5 @@
 export type TLeaderBoard = {
     leaders: Array<Object>
-    bestScore: Number
-    
+    bestScore: Number,
+    isLeadersStatus: boolean
 }

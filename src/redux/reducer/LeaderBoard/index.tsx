@@ -3,7 +3,8 @@ import { LEADERS } from "../../constraint";
 
 const initialState : TLeaderBoard  = {
     leaders : [],
-    bestScore: 0
+    bestScore: 0,
+    isLeadersStatus: false
 }
 
 const LeaderBoard = (state = initialState, action: any) => {
@@ -19,6 +20,12 @@ const LeaderBoard = (state = initialState, action: any) => {
                 ...state,
                 leaders: action.payload
             }
+        case LEADERS.LEADERS_STATUS:
+            return {
+                ...state,
+                isLeadersStatus: action.payload
+            }
+        
         default:
             return state
     }
