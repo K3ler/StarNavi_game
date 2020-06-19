@@ -1,10 +1,25 @@
 .wrapper
-    width: 500px
-    height: 500px
-    overflow-y: scroll
     background-color: #FAFAFA
-    box-sizing: border-box
+    width: 500px
+    position: relative
+    &::after
+        position: absolute
+        height: 1px
+        content: " "
+        background: black
+        bottom: 0
+        right: 0
+        left: 0
+        background:#DFDFDF
+        opacity: 0.3
+        
+
+.content
+    height: 500px
+    position: relative
     padding: 30px 30px 20px 30px 
+    box-sizing: border-box
+    overflow-y: scroll
 
 
 .leaderTitle

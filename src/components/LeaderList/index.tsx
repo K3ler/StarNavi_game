@@ -9,12 +9,14 @@ const LeaderList: React.FC = () => {
 
     return (
         <div className={cl.wrapper}>
-            <h1 className={cl.leaderTitle}>
-                Leader Board 
-            </h1>
-            <ul className={cl.leaderList}>
-                <LeaderItem />
-            </ul>
+            <div className={cl.content}>
+                <h1 className={cl.leaderTitle}>
+                    Leader Board 
+                </h1>
+                <ul className={cl.leaderList}>
+                    <LeaderItem />
+                </ul>
+            </div>
         </div>
     )
 }
