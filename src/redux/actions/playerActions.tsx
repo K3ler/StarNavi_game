@@ -44,10 +44,12 @@ export const setWinner = (winner: string, date: Date) => {
         let dateString = `${hours}:${minutes}; ` + global
 
 
+        leaders.reverse()
         leaders.push({
             winner,
             date: dateString
         })
+        leaders.reverse()
 
         api.sendWinner({
             "winner": winner,

@@ -14,7 +14,7 @@ export const getLeaders = () => {
         })
     }
 }
-
+// Update Leaders Board
 export const setLeaders = (leaders: Array<{}>) => {
 
     return {
