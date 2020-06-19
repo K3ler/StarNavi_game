@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "782f47020894fec6f5c1bb5c1f67930e",
+    "revision": "ad18290d698e5a27adf07dabcfb8e732",
     "url": "/StarNavi_game/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/StarNavi_game/static/css/2.d34346ea.chunk.css"
   },
   {
-    "revision": "11cfa111998b6852672b",
+    "revision": "2bb3de059902b9aef531",
     "url": "/StarNavi_game/static/css/main.3d41a4e6.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "11cfa111998b6852672b",
-    "url": "/StarNavi_game/static/js/main.08df0966.chunk.js"
+    "revision": "2bb3de059902b9aef531",
+    "url": "/StarNavi_game/static/js/main.b39b75e0.chunk.js"
   },
   {
     "revision": "fb9d9e3de6b7b1c88aee",
