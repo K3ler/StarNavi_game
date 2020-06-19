@@ -28,4 +28,5 @@ export const PLAYER = {
 export const LEADERS = {
     GET_LEADERS : "GET_LEADERS",
     ADD_WINNER : "ADD_WINNER",
+    SET_LEADERS : "SET_LEADERS"
 }

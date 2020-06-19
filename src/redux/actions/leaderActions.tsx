@@ -14,3 +14,12 @@ export const getLeaders = () => {
         })
     }
 }
+
+export const setLeaders = (leaders: Array<{}>) => {
+
+    return {
+        payload: leaders,
+        type: LEADERS.SET_LEADERS
+    }
+        
+}
