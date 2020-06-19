@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/StarNavi_game/precache-manifest.01415a0eaf12ab18feed9dca56fef345.js"
+  "/StarNavi_game/precache-manifest.3af50acc0a5a2874933e1214df02723d.js"
 );
 
 self.addEventListener('message', (event) => {
