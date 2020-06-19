@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/StarNavi_game/static/css/main.3d41a4e6.chunk.css",
-    "main.js": "/StarNavi_game/static/js/main.fd60ad68.chunk.js",
-    "main.js.map": "/StarNavi_game/static/js/main.fd60ad68.chunk.js.map",
+    "main.css": "/StarNavi_game/static/css/main.069c2e64.chunk.css",
+    "main.js": "/StarNavi_game/static/js/main.e2e9a8bd.chunk.js",
+    "main.js.map": "/StarNavi_game/static/js/main.e2e9a8bd.chunk.js.map",
     "runtime-main.js": "/StarNavi_game/static/js/runtime-main.8dcec400.js",
     "runtime-main.js.map": "/StarNavi_game/static/js/runtime-main.8dcec400.js.map",
     "static/css/2.d34346ea.chunk.css": "/StarNavi_game/static/css/2.d34346ea.chunk.css",
-    "static/js/2.a91f2c4e.chunk.js": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js",
-    "static/js/2.a91f2c4e.chunk.js.map": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js.map",
+    "static/js/2.f8792a61.chunk.js": "/StarNavi_game/static/js/2.f8792a61.chunk.js",
+    "static/js/2.f8792a61.chunk.js.map": "/StarNavi_game/static/js/2.f8792a61.chunk.js.map",
     "index.html": "/StarNavi_game/index.html",
-    "precache-manifest.41bac978486e0c66fa69fe81a4b6a4aa.js": "/StarNavi_game/precache-manifest.41bac978486e0c66fa69fe81a4b6a4aa.js",
+    "precache-manifest.01415a0eaf12ab18feed9dca56fef345.js": "/StarNavi_game/precache-manifest.01415a0eaf12ab18feed9dca56fef345.js",
     "service-worker.js": "/StarNavi_game/service-worker.js",
     "static/css/2.d34346ea.chunk.css.map": "/StarNavi_game/static/css/2.d34346ea.chunk.css.map",
-    "static/css/main.3d41a4e6.chunk.css.map": "/StarNavi_game/static/css/main.3d41a4e6.chunk.css.map",
-    "static/js/2.a91f2c4e.chunk.js.LICENSE.txt": "/StarNavi_game/static/js/2.a91f2c4e.chunk.js.LICENSE.txt"
+    "static/css/main.069c2e64.chunk.css.map": "/StarNavi_game/static/css/main.069c2e64.chunk.css.map",
+    "static/js/2.f8792a61.chunk.js.LICENSE.txt": "/StarNavi_game/static/js/2.f8792a61.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8dcec400.js",
     "static/css/2.d34346ea.chunk.css",
-    "static/js/2.a91f2c4e.chunk.js",
-    "static/css/main.3d41a4e6.chunk.css",
-    "static/js/main.fd60ad68.chunk.js"
+    "static/js/2.f8792a61.chunk.js",
+    "static/css/main.069c2e64.chunk.css",
+    "static/js/main.e2e9a8bd.chunk.js"
   ]
 }
