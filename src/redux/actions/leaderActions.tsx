@@ -8,7 +8,7 @@ export const getLeaders = () => {
         api.getLeaders((resp) => {
 
             dispatch({
-                payload: resp.data,
+                payload: resp.data.reverse(),
                 type: LEADERS.GET_LEADERS
             })
         })
