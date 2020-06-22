@@ -11,6 +11,17 @@ const LeaderList: React.FC = () => {
 
     let isLeadersStatus = useSelector((state: RootStateOrAny) => state.leaderBoard.isLeadersStatus)
 
+    let leadersList = useSelector((state : RootStateOrAny) => state.leaderBoard.leaders)
+
+
+
+    // Get all winners
+    const leaders = leadersList.map((leader, index) => {
+
+        return <LeaderItem winner={leader.winner}
+                           date={leader.date} />
+    })
+
     return (
         <div className={cl.wrapper}>
             <UIBlock status={isLeadersStatus} />
@@ -19,7 +30,7 @@ const LeaderList: React.FC = () => {
                     Leader Board
                     </h1>
                 <ul className={cl.leaderList}>
-                    <LeaderItem />
+                    {leaders}
                 </ul>
             </div>
         </div>
